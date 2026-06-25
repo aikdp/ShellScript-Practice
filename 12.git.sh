@@ -14,18 +14,18 @@ if [ $USER -ne 0 ]
         exit 1
 fi
 
-dnf list installed nginx
+dnf list installed mysql
 if [ $? -ne 0 ]
 then
-    echo -e "ngnx is not installed, $Y goint to installed $N"
-    dnf install nginx -y
+    echo -e "mysql is not installed, $Y goint to installed $N"
+    dnf install mysql -y
     if [ $? -ne 0 ]
     then
-        echo "$R nginx instllation failed $N, please check"
+        echo "$R mysql instllation failed $N, please check"
         exit 1
     else 
-        echo -e "NGINX installation completed $G SUCCESSFULLY $N"
+        echo -e "mysql installation completed $G SUCCESSFULLY $N"
     fi
 else 
-    echo -e "nginx already installed, $Y SKIPPING $N"
+    echo -e "mysql already installed, $Y SKIPPING $N"
 fi
