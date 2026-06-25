@@ -11,9 +11,6 @@ SCRIPT_NAME=$($0 | cut -d "." -f1)
 TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
 LOG_FILE="$LOG_FOLDER/$SCRIPT_NAME-$TIMESTAMP.log"
 
-mkdir - $LOG_FOLDER | tee -a $LOG_FILE
-
-
 if [ $USER -ne 0 ]
     then
         echo -e "$R Please run with ROOT preveilges $N" 
@@ -29,6 +26,8 @@ VALIDATE(){
         echo -e "$2 is $G SUCCESS $N" | tee -a $LOG_FILE
     fi    
 }
+
+mkdir - $LOG_FOLDER | tee -a $LOG_FILE
 
 for package in $@
 do
