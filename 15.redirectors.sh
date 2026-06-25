@@ -17,6 +17,11 @@ if [ $USER -ne 0 ]
         exit 1
 fi
 
+USAGE(){
+    echo "USAGE is:: sudo sh <FILENAME> package1 package2 ..."
+    exit 1
+}
+
 VALIDATE(){
     if [ $1 -ne 0 ]
     then
