@@ -14,14 +14,14 @@ LOG_FILE="$LOG_FOLDER/$SCRIPT_NAME-$TIMESTAMP.log"
 if [ $USER -ne 0 ]
     then
         echo -e "$R Please run with ROOT preveilges $N" 
-        USAGE
+        exit 1
 fi
 
 USAGE(){
     echo "USAGE is:: sudo sh <FILENAME> package1 package2 ..."
     exit 1
 }
-
+USAGE
 
 VALIDATE(){
     if [ $1 -ne 0 ]
