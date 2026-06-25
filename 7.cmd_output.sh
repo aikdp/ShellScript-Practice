@@ -1,6 +1,6 @@
 #!/bin/bash
 
 
-D=$(date)
+D=$(date +Y%-m%-d%-H%-M%-S%)
 
-echo "Today time is:: $D"
+echo "Today date is:: $D"
