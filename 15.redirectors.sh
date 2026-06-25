@@ -7,7 +7,7 @@ N="\e[0m"
 
 USER=$(id -u)
 LOG_FOLDER="/var/log/shell_practice"
-SCRIPT_NAME=$($0 | cut -d "." -f1)
+SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
 TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
 LOG_FILE="$LOG_FOLDER/$SCRIPT_NAME-$TIMESTAMP.log"
 
