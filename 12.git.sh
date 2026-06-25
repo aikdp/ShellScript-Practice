@@ -25,5 +25,5 @@ then
         exit 1
     fi
 else 
-    echo "nginx already installed, $Y SKIPPING $N"
+    echo -e "nginx already installed, $Y SKIPPING $N"
 fi
