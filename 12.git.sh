@@ -3,22 +3,27 @@
 
 USER=$(id -u)
 
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+N="\e[0m"
+
 if [ $USER -ne 0 ]
     then
-        echo "Please run with ROOT preveilges"
+        echo -e "$R Please run with ROOT preveilges $N"
         exit 1
 fi
 
-dnf list installed git
+dnf list installed nginx
 if [ $? -ne 0 ]
 then
-    echo "Git is not installed, goint to installed"
-    dnf install git -y
+    echo -e "ngnx is not installed, $Y goint to installed $N"
+    dnf install nginx -y
     if [ $? -ne 0 ]
     then
-        echo "Git instllation failed, pleae check"
+        echo "$R nginx instllation failed $N, please check"
         exit 1
     fi
 else 
-    echo "git already installed, SKIPPING"
+    echo "nginx already installed, $Y SKIPPING $N"
 fi
