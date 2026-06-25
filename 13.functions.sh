@@ -38,7 +38,7 @@ dnf list installed nginx
 if [ $? -ne 0 ]
 then
     echo -e "mysql is not installed, $Y goint to installed $N"
-    dnf install mysql -y
+    dnf install nginx -y
     VALIDATE $? "Nginx Installtion"
 else 
     echo -e "NGINX already installed, $Y SKIPPING $N"
