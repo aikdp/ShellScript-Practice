@@ -26,6 +26,9 @@ then
     USAGE
 fi
 
+#Every time this will tell you the user when the script executing
+echo "Script started executed at:: $(date)"
+
 VALIDATE(){
     if [ $1 -ne 0 ]
     then
