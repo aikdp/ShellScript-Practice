@@ -1,4 +1,6 @@
 #!/bin/bash
 
 
-date
+D=$(date)
+
+echo "Today time is:: $D"
