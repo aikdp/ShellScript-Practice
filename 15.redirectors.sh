@@ -20,7 +20,11 @@ fi
 USAGE(){
     echo "USAGE is:: sudo sh <FILENAME> package1 package2 ..."
 }
-USAGE
+
+if [ $# -eq 0 ]
+then
+    USAGE
+fi
 
 VALIDATE(){
     if [ $1 -ne 0 ]
