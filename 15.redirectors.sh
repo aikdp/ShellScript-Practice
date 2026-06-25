@@ -27,7 +27,7 @@ VALIDATE(){
     fi    
 }
 
-mkdir - $LOG_FOLDER | tee -a $LOG_FILE
+mkdir -p $LOG_FOLDER | tee -a $LOG_FILE
 
 for package in $@
 do
