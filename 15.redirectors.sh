@@ -15,6 +15,7 @@ if [ $USER -ne 0 ]
     then
         echo -e "$R Please run with ROOT preveilges $N" 
         USAGE
+fi
 
 USAGE(){
     echo "USAGE is:: sudo sh <FILENAME> package1 package2 ..."
