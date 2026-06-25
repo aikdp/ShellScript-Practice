@@ -21,6 +21,7 @@ USAGE(){
     echo "USAGE is:: sudo sh <FILENAME> package1 package2 ..."
     exit 1
 }
+USAGE
 
 VALIDATE(){
     if [ $1 -ne 0 ]
