@@ -24,3 +24,12 @@ do
     rm -rf $file
 
 done <<< $FILES_DEL
+
+#Cront JOb set below
+#crontab -e
+#*/2 * * * * sh <path-of-script>.sh
+#*/2 * * * * sh /home/ec2-user/ShellScript-Practice/20.delete_logs.sh
+#:wq!
+#The above is the cronjob will run every 2 mins
+#to cehck: go to --> cd /var/log
+# sudo tail -f /var/log/cron
