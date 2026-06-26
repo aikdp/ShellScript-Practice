@@ -8,7 +8,7 @@ N="\e[0m"
 
 SOURCE_DIR=$1
 DESTINATION_DIR=$2
-DAYS=${3: -14}
+DAYS=${3:-14}
 
 TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
 
@@ -38,17 +38,17 @@ fi
 #Every time this will tell you the user when the script executing
 echo "Script started executed at:: $(date)"
 
-FILES_DEL=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS)
+FILES_DEL=$(find ${SOURCE_DIR} -name "*.log" -mtime +$DAYS)
 
 ZIP_FILE="$DESTINATION_DIR/app_logs-$TIMESTAMP.zip"
 
 if [ ! -z $FILES_DEL ]  #doesnot found true ( z is true when files empty, ! makes it expression false )
 then 
-    echo "File older than 14daysare found, going to ZIP"
+    echo "File older than 14days $Y are found $N, going to ZIP"
     $FILES_DEL | zip "$ZIP_FILE" -@
     if [ -f $ZIP_FILE ]
     then
-        echo "Files is Zipped successfully"
+        echo "Files is Zipped $G successfully $N"
         while IFS= read -r file
         do
             echo "DELETING FILES: $file"
@@ -59,5 +59,5 @@ then
         exit 1
     fi
 else 
-    echo "FIles older than 14 daysnot found"
+    echo -e "FIles older than 14 days are $R not found $N"
 fi
