@@ -7,7 +7,7 @@
 
 # trap 'err_repo "${LINENO}"' ERR
 
-trap "echo 'Error finds at $1'" ERR
+trap "echo 'Error finds at $LINENO'" ERR
 
 echo "Hi, How are you"
 
