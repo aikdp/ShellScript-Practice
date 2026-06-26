@@ -38,6 +38,7 @@ fi
 #Every time this will tell you the user when the script executing
 echo "Script started executed at:: $(date)"
 
+ZIP_FILE="$DESTINATION_DIR/app_logs-$TIMESTAMP.zip"
 FILES_DEL=$(find ${SOURCE_DIR} -name "*.log" -mtime +$DAYS)
 echo "Existing oldet]r than $DAYS days are:: $FILES_DEL "
 
@@ -45,11 +46,10 @@ echo "Existing oldet]r than $DAYS days are:: $FILES_DEL "
 if [ ! -z "${FILES_DEL}" ]
 then
     echo -e "File older than 14days $Y are found $N, going to ZIP"
-    ZIP_FILE="$DESTINATION_DIR/app_logs-$TIMESTAMP.zip"
     find ${SOURCE_DIR} -name "*.log" -mtime +$DAYS | zip "$ZIP_FILE" -@
     if [ -f $ZIP_FILE ]
     then
-        echo "Files is Zipped $G successfully $N"
+        echo -e "Files is Zipped $G successfully $N"
         while IFS= read -r file
         do
             echo "DELETING FILES: $file"
