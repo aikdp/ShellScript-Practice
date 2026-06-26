@@ -4,6 +4,6 @@
 set -ex
 echo "Hello World"
 
-ehoo "Helo"
+ehoo "Helo" #intentionnaly wrong command given
 
 echo "HI, checking SET commamd"
