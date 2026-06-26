@@ -44,7 +44,7 @@ echo "Existing oldet]r than $DAYS days are:: $FILES_DEL "
 ZIP_FILE="$DESTINATION_DIR/app_logs-$TIMESTAMP.zip"
 
 # #doesnot found true ( z is true when files empty, ! makes it expression false )
-if [ ! -z ${FILES_DEL} ]
+if [ ! -z "${FILES_DEL}" ]
 then
     echo "File older than 14days $Y are found $N, going to ZIP"
     $FILES_DEL | zip "$ZIP_FILE" -@
