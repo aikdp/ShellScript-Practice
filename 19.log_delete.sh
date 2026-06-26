@@ -12,7 +12,7 @@ SOURCE_DIR=$1
 
 if [ ! -d $SOURCE_DIR ]
 then
-    echo "$SOURCE_DIR does not exists. please check"
+    echo -e "$SOURCE_DIR  $R does not exists $N. please check"
     exit 1
 fi
 
