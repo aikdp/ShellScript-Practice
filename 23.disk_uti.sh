@@ -13,5 +13,4 @@ do
         echo "$MOUNT_POINT is morethan $THRESHOLD, Currrent Value is:: $USAGE, PLEASE CHECK"
     fi
 
-done <<< $DISK_USAGE
-
+done <<< "$DISK_USAGE"
