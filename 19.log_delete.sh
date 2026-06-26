@@ -10,7 +10,7 @@ SOURCE_DIR=$1
 # DESTINATION_DIR=$2
 # DAYS=$(3: -14)
 
-if [ ! -d $SOURCE_DIR]
+if [ ! -d $SOURCE_DIR ]
 then
     echo "$SOURCE_DIR does not exists. please check"
     exit 1
@@ -22,4 +22,5 @@ fi
 #     exit 1
 # fi
 
-find $SOURCE_DIR -name "*.log" -mtime +14
+FILES_DEL=$(find $SOURCE_DIR -name "*.log" -mtime +14)
+echo "File to be deleted: $FILES_DEL"
