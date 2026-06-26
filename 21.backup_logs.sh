@@ -8,7 +8,7 @@ N="\e[0m"
 
 SOURCE_DIR=$1
 DESTINATION_DIR=$2
-DAYS=$(3: -14)
+DAYS=${3: -14}
 
 TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
 
@@ -27,6 +27,7 @@ fi
 
 USAGE(){
     echo "USAGE is:: sudo sh <Source> <Destination> Days(optional)"
+    exit 1
 }
 
 if [ $# -lt 2 ] # $# means no. of args passed to the script in run time
