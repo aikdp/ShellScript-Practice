@@ -26,7 +26,7 @@ then
 fi
 
 USAGE(){
-    echo "USAGE is:: sudo sh <Source> <Destination> Days(optional)"
+    echo "USAGE is:: sh <Source> <Destination> Days(optional)"
     exit 1
 }
 
@@ -38,25 +38,26 @@ fi
 #Every time this will tell you the user when the script executing
 echo "Script started executed at:: $(date)"
 
-FILES_DEL=$(find $SOURCE_DIR -name "*.log" -mtime +14)
+FILES_DEL=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS)
+
 ZIP_FILE="$DESTINATION_DIR/app_logs-$TIMESTAMP.zip"
 
 if [ ! -z $FILES_DEL ]  #doesnot found true ( z is true when files empty, ! makes it expression false )
-    then 
-        echo "File older than 14daysare found, going to ZIP"
-        $FILES_DEL | zip "$ZIP_FILE" -@
-        if [ -f $ZIP_FILE ]
-        then
-            echo "Files is Zipped successfully"
-            while IFS= read -r file
-            do
-                echo "DELETING FILES: $file"
-                rm -rf $file
-            done <<< $FILES_DEL
-        else
-            echo "ZIPPINGp failed"
-            exit 1
-        fi
-    else 
-        echo "FIles older than 14 daysnot found"
+then 
+    echo "File older than 14daysare found, going to ZIP"
+    $FILES_DEL | zip "$ZIP_FILE" -@
+    if [ -f $ZIP_FILE ]
+    then
+        echo "Files is Zipped successfully"
+        while IFS= read -r file
+        do
+            echo "DELETING FILES: $file"
+            rm -rf $file
+        done <<< $FILES_DEL
+    else
+        echo "ZIPPINGp failed"
+        exit 1
+    fi
+else 
+    echo "FIles older than 14 daysnot found"
 fi
