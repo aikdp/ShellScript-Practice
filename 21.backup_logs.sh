@@ -38,7 +38,7 @@ fi
 #Every time this will tell you the user when the script executing
 echo "Script started executed at:: $(date)"
 
-FILES_DEL=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS)
+FILES_DEL=$(find $SOURCE_DIR -name "*.log" -mtime +14)
 ZIP_FILE="$DESTINATION_DIR/app_logs-$TIMESTAMP.zip"
 
 
