@@ -41,8 +41,7 @@ echo "Script started executed at:: $(date)"
 FILES_DEL=$(find $SOURCE_DIR -name "*.log" -mtime +14)
 ZIP_FILE="$DESTINATION_DIR/app_logs-$TIMESTAMP.zip"
 
-
-    if [ ! -z $FILES_DEL ]  #doesnot found true ( z is true when files empty, ! makes it expression false )
+if [ ! -z $FILES_DEL ]  #doesnot found true ( z is true when files empty, ! makes it expression false )
     then 
         echo "File older than 14daysare found, going to ZIP"
         $FILES_DEL | zip "$ZIP_FILE" -@
@@ -60,4 +59,4 @@ ZIP_FILE="$DESTINATION_DIR/app_logs-$TIMESTAMP.zip"
         fi
     else 
         echo "FIles older than 14 daysnot found"
-    fi
+fi
