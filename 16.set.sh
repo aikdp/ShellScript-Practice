@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # set is uswed to exit when the script finds the error. it will stop immedidatley. "x" is for debugging
-set -e
+set -ex
 echo "Hello World"
 
 ehoo "Helo"
