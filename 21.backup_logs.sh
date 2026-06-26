@@ -19,7 +19,7 @@ then
 fi
 
 
-if [ ! -d $DESTINATION_DIR]
+if [ ! -d $DESTINATION_DIR ]
 then
     echo "$DESTINATION_DIR does not exists. please check"
     exit 1
