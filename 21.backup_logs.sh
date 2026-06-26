@@ -46,7 +46,7 @@ if [ ! -z "${FILES_DEL}" ]
 then
     echo -e "File older than 14days $Y are found $N, going to ZIP"
     ZIP_FILE="$DESTINATION_DIR/app_logs-$TIMESTAMP.zip"
-    "$FILES_DEL" | zip "$ZIP_FILE" -@
+    find ${SOURCE_DIR} -name "*.log" -mtime +$DAYS | zip "$ZIP_FILE" -@
     if [ -f $ZIP_FILE ]
     then
         echo "Files is Zipped $G successfully $N"
