@@ -42,8 +42,9 @@ FILES_DEL=$(find ${SOURCE_DIR} -name "*.log" -mtime +$DAYS)
 
 ZIP_FILE="$DESTINATION_DIR/app_logs-$TIMESTAMP.zip"
 
-if [ ! -z $FILES_DEL ]  #doesnot found true ( z is true when files empty, ! makes it expression false )
-then 
+#doesnot found true ( z is true when files empty, ! makes it expression false )
+if [ ! -z $FILES_DEL ]
+then
     echo "File older than 14days $Y are found $N, going to ZIP"
     $FILES_DEL | zip "$ZIP_FILE" -@
     if [ -f $ZIP_FILE ]
